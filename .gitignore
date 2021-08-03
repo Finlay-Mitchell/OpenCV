@@ -5,6 +5,6 @@
 *[Xx]86
 *[Dd]ebug
 *[Rr]elease
-
+*vcxproj.filters
 *.mp4
 *.jpg
