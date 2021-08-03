@@ -26,7 +26,7 @@ public:
 	static void log(std::string, uint_fast8_t);
 	static uint displayImage(cv::Mat);
 	static uint openAndReadCapture();
-
+	static std::string getFPS(cv::VideoCapture);
 	~Utils();
 };
 

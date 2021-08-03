@@ -22,4 +22,5 @@ int main(int argc, const char** argv)
     Utils::frameTitle = parser.get<std::string>("frameTitle");
     Utils::captureSource = parser.get<std::string>("capture");
     Utils::openAndReadCapture();
+    cv::destroyAllWindows();
 }

@@ -68,9 +68,17 @@ uint Utils::openAndReadCapture()
             break;
         }
 
-        facialRecognition->DrawFaceBox(frame);
+        facialRecognition->DrawFaceBox(videoCapture);
     }
 
     delete facialRecognition;
+    videoCapture.release();
     return 0;
+}
+
+std::string Utils::getFPS(cv::VideoCapture videoCapture)
+{
+    float getfps = videoCapture.get(cv::CAP_PROP_FPS);
+    std::string fps = std::to_string(getfps) + "fps";
+    return fps;
 }

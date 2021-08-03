@@ -15,7 +15,7 @@ class FaceRecognition
 public:
 	static std::string face_cascade_name;
 	FaceRecognition();
-	void DrawFaceBox(cv::Mat);
+	void DrawFaceBox(cv::VideoCapture);
 };
 
 #endif
