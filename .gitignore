@@ -1,0 +1,10 @@
+*.obj
+*.vs
+*.user
+*[Xx]64
+*[Xx]86
+*[Dd]ebug
+*[Rr]elease
+
+*.mp4
+*.jpg
