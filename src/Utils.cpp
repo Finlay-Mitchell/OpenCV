@@ -1,12 +1,11 @@
 #include "Utils.h"
+#include "Face recognition/FaceRecognition.h"
 
 Utils::Utils() {}
 
 Utils::~Utils() {}
 
 std::string Utils::frameTitle;
-std::string Utils::face_cascade_name;
-std::string Utils::eyes_cascade_name;
 std::string Utils::captureSource;
 
 void Utils::log(std::string message, uint_fast8_t loggingLevel)
@@ -48,9 +47,11 @@ uint Utils::openAndReadCapture()
     double dWidth = videoCapture.get(cv::CAP_PROP_FRAME_WIDTH);
     double dHeight = videoCapture.get(cv::CAP_PROP_FRAME_HEIGHT);
     std::cout << "Frame size : " << dWidth << " x " << dHeight << std::endl;
+    FaceRecognition* facialRecognition = new FaceRecognition();
 
     while (1)
     {
+
         cv::Mat frame;
         bool videoCaptureReadSuccess = videoCapture.read(frame);
 
@@ -66,7 +67,10 @@ uint Utils::openAndReadCapture()
         {
             break;
         }
+
+        facialRecognition->DrawFaceBox(frame);
     }
 
+    delete facialRecognition;
     return 0;
 }

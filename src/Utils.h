@@ -21,8 +21,6 @@ public:
 	Utils();
 
 	static std::string frameTitle;
-	static std::string face_cascade_name;
-	static std::string eyes_cascade_name;
 	static std::string captureSource;
 
 	static void log(std::string, uint_fast8_t);
