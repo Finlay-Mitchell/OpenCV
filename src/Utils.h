@@ -24,8 +24,9 @@ public:
 	static std::string captureSource;
 
 	static void log(std::string, uint_fast8_t);
-	static uint displayImage(cv::Mat);
+	static void displayImage(cv::Mat);
 	static uint openAndReadCapture();
+	static void DrawFPSCount(cv::VideoCapture&, cv::Mat&);
 	static std::string getFPS(cv::VideoCapture);
 	~Utils();
 };

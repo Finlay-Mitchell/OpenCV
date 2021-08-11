@@ -13,7 +13,7 @@
 
 int main(int argc, const char** argv)
 {
-    cv::CommandLineParser parser(argc, argv, "{help h||}" "{face_cascade|C:/OpenCV/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml|Path to face cascade.}"
+    cv::CommandLineParser parser(argc, argv, "{help h||}" "{face_cascade|C:/OpenCV/opencv/sources/data/haarcascades/haarcascade_frontalface_default.xml|Path to face cascade.}"
                                              "{capture|D:/Utils/C++/OpenCV/SPOILER_SPOILER_SPOILER_SPOILER_SPOILER_r1.mp4|stream input location.}"
                                              "{frameTitle|test|Sets the name of the frame.}");
     parser.about("\nThis program demonstrates using the cv::CascadeClassifier class to detect objects (Face + eyes) in a video stream.\n" "You can use Haar or LBP features.\n\n");
