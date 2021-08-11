@@ -9,6 +9,7 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
+#include <fstream>
 
 #include <opencv2/highgui.hpp>
 #include <opencv2/videoio.hpp>

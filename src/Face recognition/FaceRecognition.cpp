@@ -2,8 +2,10 @@
 
 std::string FaceRecognition::face_cascade_name;
 cv::CascadeClassifier cC;
+
 FaceRecognition::FaceRecognition() 
 {
+    Utils::log("Face recognition class initiated", 2);
 	LoadCascades();
 	cC = cascade;
 }

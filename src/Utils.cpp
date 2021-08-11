@@ -21,11 +21,16 @@ void Utils::log(std::string message, uint_fast8_t loggingLevel)
     switch (loggingLevel)
     {
     case 1:
-        std::cout << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << " " << message << std::endl;
+        std::cout << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << " - " << message << std::endl;
         break;
+
     case 2:
-        std::cout << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << " " << message << std::endl;
-        //also log to text file.
+        std::cout << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << " - " << message << std::endl;  
+        std::ofstream LogFile;
+        LogFile.open("Data/Logs.txt", std::ios_base::app);
+        LogFile << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << " - " << message << std::endl;
+        LogFile.close();
+
         break;
     }
 }
@@ -37,9 +42,7 @@ void Utils::log(std::string message, uint_fast8_t loggingLevel)
 /// <returns>Return an integer to determine whether error occurs.</returns>
 void Utils::displayImage(cv::Mat frame)
 {
-    Utils::log(frameTitle, 1);
     cv::imshow(frameTitle, frame);
-    //cv::namedWindow(frameTitle/*, cv::WINDOW_AUTOSIZE*/);
 }
  
 /// <summary>
@@ -82,6 +85,7 @@ uint Utils::openAndReadCapture()
 
         if (cv::waitKey(30) == 27)
         {
+            Utils::log("Escape key pressed by user", 2);
             std::cout << "esc key is pressed by user" << std::endl;
             return 1;
         }
